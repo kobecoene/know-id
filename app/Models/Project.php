@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'detail',
+        'author',
+    ];
+
+    public function skills() {
+        return $this->belongsToMany('App\Models\Skill');
+    }
 }

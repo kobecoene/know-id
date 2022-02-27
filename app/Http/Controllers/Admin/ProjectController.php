@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -29,7 +31,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        return view('admin.projects.create', ['skills' => Skill::all()]);
     }
 
     /**
@@ -44,7 +46,7 @@ class ProjectController extends Controller
 
         $project = Project::create($validatedData);
 
-        $request->session()->flash('success', 'You have created the user');
+        $request->session()->flash('success', 'Project succesvol aangemaakt');
 
         return redirect(route('admin.projects.index'));
     }
@@ -88,7 +90,7 @@ class ProjectController extends Controller
         }
 
         $project->update($request);
-        $request->session()->flash('success', 'You have edited the project');
+        $request->session()->flash('success', 'Project succesvol gewijzigd');
 
         return redirect(route('admin.projects.index'));
     }
@@ -96,14 +98,14 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  \App\Models\Skill  $skill
      * @return \Illuminate\Http\Response
      */
     public function destroy($id, Request $request)
     {
         Project::destroy($id);
 
-        $request->session()->flash('success', 'You have deleted the project');
+        $request->session()->flash('success', 'Project succesvol verwijderd');
 
         return redirect(route('admin.projects.index'));
     }

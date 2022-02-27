@@ -1,6 +1,6 @@
 @csrf
 <div class="form-group">
-    <label for="name">Name</label>
+    <label for="name">Naam</label>
     <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name"
            aria-describedby="name" value="{{ old('name') }} @isset($user) {{ $user->name }} @endisset">
     @error('name')
@@ -10,7 +10,7 @@
     @enderror
 </div>
 <div class="form-group">
-    <label for="email">Email address</label>
+    <label for="email">E-mailadres</label>
     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email"
            aria-describedby="email" value="{{ old('email') }}  @isset($user) {{ $user->email }} @endisset">
     @error('email')
@@ -21,7 +21,7 @@
 </div>
 @isset($create)
 <div class="form-group">
-    <label for="password">Password</label>
+    <label for="password">Wachtwoord</label>
     <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"
            id="password">
     @error('password')
@@ -31,7 +31,7 @@
     @enderror
 </div>
 <div class="form-group">
-    <label for="password_confirmation">Confirm Password</label>
+    <label for="password_confirmation">Bevestig Wachtwoord</label>
     <input name="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
            id="password_confirmation">
     @error('password_confirmation')
@@ -41,7 +41,8 @@
     @enderror
 </div>
 @endisset
-<div class="mb-3">
+<div class="mb-3 mt-2">
+    <p>Rollen:</p>
     @foreach($roles as $role)
         <div class="form-check">
             <input name="roles[]" class="form-check-input"
@@ -52,6 +53,12 @@
             </label>
         </div>
     @endforeach
+</div>
+<div class="mb-3 mt-2">
+{{--    <p>Badges:</p>--}}
+{{--    @foreach($user->badges as $badge)--}}
+{{--        <p>{{ $badge->name }}</p>--}}
+{{--    @endforeach--}}
 </div>
 
 <button type="submit" class="btn btn-primary mt-3">Submit</button>

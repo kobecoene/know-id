@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Project</h2>
+                <h2>Edit Skill</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"> Terug</a>
@@ -33,19 +33,6 @@
                     <input type="text" name="name" value="{{ $project->name }}" class="form-control">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Naam bedrijf:</strong>
-                    <input type="text" name="author" value="{{ $project->author }}" class="form-control">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Omschrijving:</strong>
-                    <textarea name="detail" id="detail" rows="7" class="form-control">{{ $project->detail }}</textarea>
-                </div>
-            </div>
-
             <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
                 <button type="submit" class="btn btn-primary">Opslaan</button>
             </div>

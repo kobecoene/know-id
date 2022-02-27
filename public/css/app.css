@@ -11439,6 +11439,10 @@ body {
   overflow-x: hidden;
 }
 
+input, textarea, select {
+  margin-bottom: 10px;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }

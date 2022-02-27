@@ -17,9 +17,9 @@
                 <thead>
                 <tr>
                     <th scope="col">#Id</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Naam</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Acties</th>
                 </tr>
                 </thead>
                 <tbody>

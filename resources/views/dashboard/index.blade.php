@@ -28,7 +28,7 @@
         <div class="row mt-4">
             <div class="col-md-6">
                 <h2>Mijn badges</h2>
-                <p>Je hebt momenteel geen badges toegewezen gekregen</p>
+                <p>Je hebt momenteel nog geen badges toegewezen gekregen</p>
 
                 <a href="{{ route('user.profile') }}" class="btn btn-outline-primary w-100 mt-2">bekijk alle badges</a>
             </div>

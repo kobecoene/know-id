@@ -69,6 +69,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.projects.index') }}">Projects</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.skills.index') }}">Skills</a>
+                            </li>
                         @endcan
                     </ul>
                 </div>

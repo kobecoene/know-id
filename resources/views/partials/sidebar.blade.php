@@ -15,12 +15,10 @@
                 <a href="{{ route('dashboard.projects') }}">Mijn Projecten</a>
             </li>
             <li>
-{{--                <a href="{{ route('dashboard.projectsOverview'}}">Ontdek Projecten</a>--}}
+                <a href="{{ route('dashboard.projectsOverview')}}">Ontdek Projecten</a>
             </li>
         </ul>
-
     </div>
     <!-- /#sidebar-wrapper -->
-
 </div>
 <!-- /#wrapper -->

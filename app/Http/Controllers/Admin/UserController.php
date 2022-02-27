@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Badge;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -28,7 +29,6 @@ class UserController extends Controller
 
             return view('admin.users.index')->with(['users' => $users]);
         }
-        dd('You need to be an admin to view this page');
     }
 
     /**
@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create', ['roles' => Role::all()]);
+        return view('admin.users.create', ['roles' => Role::all(), 'bades' => Badge::all()]);
     }
 
     /**
@@ -57,7 +57,7 @@ class UserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        $request->session()->flash('success', 'You have created the user');
+        $request->session()->flash('success', 'Gebruiker succesvol aangemaakt');
 
         return redirect(route('admin.users.index'));
     }
@@ -70,7 +70,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.users.show', [
+            'user' => User::find($id),
+            'roles' => Role::all(),
+            'badges' => Badge::all()
+        ]);
     }
 
     /**
@@ -81,11 +85,14 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
         return view('admin.users.edit',
             [
+                'user' => User::find($id),
                 'roles' => Role::all(),
-                'user' => User::find($id)
+                'badges' => Badge::all()
             ]);
+
     }
 
     /**

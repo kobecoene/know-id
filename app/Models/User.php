@@ -60,4 +60,8 @@ class User extends Authenticatable
     public function hasAnyRoles(array $role) {
         return null !== $this->roles()->whereIn('name', $role)->first();
     }
+
+    public function badges() {
+        return $this->belongsToMany('App\Models\Badge');
+    }
 }

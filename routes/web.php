@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BadgeController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\User\Profile;
@@ -42,4 +43,5 @@ Route::prefix('admin')->middleware(['auth', 'auth.isAdmin'])->name('admin.')->gr
     Route::resource('/users', UserController::class);
     Route::resource('/badges', BadgeController::class);
     Route::resource('/projects', ProjectController::class);
+    Route::resource('/skills', SkillController::class);
 });
