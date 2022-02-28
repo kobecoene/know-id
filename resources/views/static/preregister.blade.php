@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="preregisterContainer">
-    <h1>Ik registreer als...</h1>
-    <div class="row mb-3">
+    <h1 class="text-center">Ik registreer als...</h1>
+    <div class="row mb-3 text-center">
         <div class="col-md-5">
-            <button class="btn btn-primary" type="button"
+            <button class="btn btn-secondary btn-lg btnWerknemer" type="button"
                     onclick="document.getElementById('werknemer').style.display = 'block';
                         document.getElementById('werkgever').style.display = 'none';">
                 Werknemer
             </button>
         </div>
         <div class="col-md-5">
-            <button class="btn btn-primary" type="button"
+            <button class="btn btnWerkgever btn-lg" type="button"
                     onclick="document.getElementById('werkgever').style.display = 'block';
                         document.getElementById('werknemer').style.display = 'none';">
                 Werkgever

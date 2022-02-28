@@ -7,7 +7,7 @@
                 <h1>Badges</h1>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success mb-3" href="{{ route('admin.badges.create') }}"> Create New Badge</a>
+                <a class="btn btn-success mb-3" href="{{ route('admin.badges.create') }}">Nieuwe badge maken</a>
             </div>
         </div>
     </div>
@@ -15,9 +15,9 @@
     <table class="table table-bordered">
         <tr>
             <th>#id</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th width="280px">Action</th>
+            <th>Foto</th>
+            <th>Naam</th>
+            <th width="280px">Acties</th>
         </tr>
 
         @foreach ($badges as $badge)
@@ -28,10 +28,10 @@
                 <td>{{ $badge->name }}</td>
                 <td>
                     <form action="{{ route('admin.badges.destroy', $badge->id) }}" method="POST">
-                        <a class="btn btn-primary" href="{{ route('admin.badges.edit',$badge->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('admin.badges.edit',$badge->id) }}">Wijzig</a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">Verwijder</button>
                     </form>
                 </td>
             </tr>

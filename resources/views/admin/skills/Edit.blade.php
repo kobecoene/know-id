@@ -7,7 +7,7 @@
                 <h2>Edit Skill</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"> Terug</a>
+                <a class="btn btn-primary" href="{{ route('admin.skills.index') }}"> Terug</a>
             </div>
         </div>
     </div>
@@ -23,14 +23,14 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.projects.update',$project->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.skills.update',$skill->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Naam:</strong>
-                    <input type="text" name="name" value="{{ $project->name }}" class="form-control">
+                    <input type="text" name="name" value="{{ $skill->name }}" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mt-3">

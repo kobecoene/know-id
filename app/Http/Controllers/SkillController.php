@@ -79,9 +79,19 @@ class SkillController extends Controller
      * @param  \App\Models\Skill  $skill
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSkillRequest $request, Skill $skill)
+    public function update(Request $request, Skill $skill)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+        ]);
+
+        $input = $request->all();
+
+        $skill->update($input);
+
+        $request->session()->flash('success', 'Skill succesvol gewijzigd');
+
+        return redirect(route('admin.skills.index'));
     }
 
     /**

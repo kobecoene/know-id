@@ -6,9 +6,9 @@
 
         <div class="row">
             <div class="col-12">
-                <h1 class="float-left">Users</h1>
+                <h1 class="float-left">Gebruikers</h1>
                 <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-success float-right mb-2"
-                   role="button">Create</a>
+                   role="button">Toevoegen</a>
             </div>
         </div>
 
@@ -30,11 +30,11 @@
                         <td>{{ $user->email }}</td>
                         <td>
                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-primary"
-                               role="button">Edit</a>
+                               role="button">Wijzig</a>
                             <button type="button" class="btn btn-sm btn-danger"
                                     onclick="event.preventDefault();
                                     document.getElementById('delete-user-form-{{ $user->id }}').submit()">
-                                Delete
+                                Verwijder
                             </button>
                             <form id="delete-user-form-{{ $user->id }}" action="{{ route('admin.users.destroy', $user->id) }}" method="post"
                                   style="display: none;">

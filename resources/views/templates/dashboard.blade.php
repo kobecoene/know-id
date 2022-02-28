@@ -13,26 +13,29 @@
 
     <!-- Script -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/be766cb341.js" crossorigin="anonymous"></script>
 
 
 </head>
 <body>
-@include('partials.header')
 
-@include('partials.sidebar')
-
-<main class="container mt-5" id="page-content-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 offset-2">
-                @include('partials.alerts')
-                @yield('content')
+<div class="templateWrapper">
+    @include('partials.header_dash')
+    <div>
+        @include('partials.sidebar')
+        <main class="container mt-5" id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 offset-2">
+                        @include('partials.alerts')
+                        @yield('content')
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-</main>
-
-@include('partials.footer')
+    @include('partials.footer')
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

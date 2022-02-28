@@ -17,14 +17,16 @@
 
 </head>
 <body>
-@include('partials.header')
+<div class="templateWrapper">
+    @include('partials.header')
 
-<main class="container mt-5">
-    @include('partials.alerts')
-    @yield('content')
-</main>
+    <main class="container mt-5">
+        @include('partials.alerts')
+        @yield('content')
+    </main>
 
-@include('partials.footer')
+    @include('partials.footer')
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

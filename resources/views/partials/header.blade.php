@@ -1,16 +1,18 @@
 <div class="main-nav">
-    <nav class="navbar navbar-expand-lg">
-        <div class="container d-flex align-center">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container d-flex justify-content-center w-100">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'KnowId') }}</a>
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="{{ asset('images/logo_knowid.png') }}" alt="Knowid" height="50px">
+            </a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 @if (Route::has('login'))
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                         @auth
                             <li class="nav-item">
                                 <a href="{{ route('dashboard.home') }}" class="nav-link">Dashboard</a>
@@ -24,11 +26,11 @@
                         </li>
                         @auth
                             <li class="nav-item">
-                                <a href="{{ route('user.profile') }}" class="nav-link">Profile</a>
+                                <a href="{{ route('user.profile') }}" class="nav-link">Profiel</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">Logout</a>
+                                   document.getElementById('logout-form').submit();">Uitloggen</a>
                             </li>
                             <form id="logout-form" action="{{ route('logout') }}" method="post"
                                   style="display: none">
@@ -41,7 +43,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a href="{{ route('register') }}" class="nav-link">Register</a>
+                                    <a href="{{ route('register') }}" class="nav-link">Registreren</a>
                                 </li>
                             @endif
 
@@ -59,7 +61,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         @can('is-admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.users.index') }}">Users</a>
+                                <a class="nav-link" href="{{ route('admin.users.index') }}">Gebruikers</a>
                             </li>
 
                             <li class="nav-item">
@@ -67,7 +69,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Projects</a>
+                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Projecten</a>
                             </li>
 
                             <li class="nav-item">

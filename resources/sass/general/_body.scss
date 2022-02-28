@@ -1,7 +1,7 @@
 body {
-    background-color: $background;
     color: $text;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 input, textarea, select{

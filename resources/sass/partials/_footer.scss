@@ -1,20 +1,9 @@
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100vw;
-    margin-bottom: -10rem;
     padding: 20px 0;
-    background-color: $navbar;
+    background-color: #F4F4F4;
     color: #fff;
-    a {
-        color: #fff !important;
-    }
-
-    h3::after {
-        display: block;
-        content: "";
-        border-top: .3rem solid white;
-        width: 4rem;
-        margin: 0 1rem;
+    a, h3 {
+        color: #000 !important;
     }
 }

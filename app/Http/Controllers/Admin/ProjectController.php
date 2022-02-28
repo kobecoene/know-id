@@ -82,14 +82,16 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $project = Project::findOrFail($id);
+        $request->validate([
+            'name' => 'required|max:255',
+            'author' => 'required|max:255',
+            'detail' => 'required',
+        ]);
 
-        if (!$project) {
-            $request->session()->flash('error', 'You cannot edit the project');
-            return redirect(route('admin.projects.index'));
-        }
+        $input = $request->all();
 
-        $project->update($request);
+        $project->update($input);
+
         $request->session()->flash('success', 'Project succesvol gewijzigd');
 
         return redirect(route('admin.projects.index'));

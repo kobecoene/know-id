@@ -1,16 +1,14 @@
 .main-nav {
 
     .navbar {
-        background-color: $navbar;
 
         a {
-            color: #fff;
+            color: #000;
         }
     }
 
     .sub-nav {
         background-color: #fff;
-        box-shadow: 0 5px 10px 0 rgba(204, 204, 204, 0.3);
         margin-bottom: 40px;
 
         a {

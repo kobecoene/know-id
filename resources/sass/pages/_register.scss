@@ -1,0 +1,10 @@
+.registerContainer {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .btn {
+        color: white;
+    }
+}

@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-    <h1>Create New User</h1>
+    <h1>Nieuwe gebruiker aanmaken</h1>
 
     <div class="card">
 
